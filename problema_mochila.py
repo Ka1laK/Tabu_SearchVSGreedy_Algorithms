@@ -82,6 +82,13 @@ print(f" - Valor optimo: {resultado_tabu}")
 print(f" - Tiempo: {tiempo_tabu:.2f} ms")
 print(f" - Memoria Pico: {memoria_tabu:.2f} KB")
 
+
+
+
+
+
+
+
 # graficamos
 labels = ['Greedy Algorithm', 'Tabu Search']
 valores_tiempo = [tiempo_greedy, tiempo_tabu]
@@ -123,6 +130,18 @@ plt.show()
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
 # codigo para el caso del problema favorable para tabu search
 
 
@@ -146,22 +165,6 @@ y evitar soluciones iniciales subóptimas.
 
 
 
-
-# codigo para el caso del problema favorable para greedy algorithm
-
-'''
-Enunciado:
-Dado un conjunto de objetos con una clara relación proporcional entre valor y peso, 
-encuentra el subconjunto que maximice el valor total.
-
-Datos del problema:
-Pesos: [2, 4, 6, 8, 10]
-Valores: [4, 8, 12, 16, 20]
-Capacidad Máxima: 15
-
-En este caso, Greedy Algorithm es ideal porque las decisiones locales conducen a una 
-solución óptima global.
-'''
 
 
 
