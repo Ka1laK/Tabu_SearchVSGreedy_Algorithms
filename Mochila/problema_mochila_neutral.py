@@ -3,6 +3,22 @@ import random
 import tracemalloc
 import matplotlib.pyplot as plt
 
+
+'''
+Enunciado:
+Dado un conjunto de objetos, cada uno con un peso y un valor, determina el subconjunto de objetos que
+maximiza el valor total sin exceder un peso máximo permitido.
+
+Datos:
+
+Pesos: [2, 3, 4, 5]
+Valores: [3, 4, 5, 6]
+Capacidad Máxima: 5
+
+'''
+
+
+
 # datos del problema
 pesos = [2, 3, 4, 5]
 valores = [3, 4, 5, 6]
@@ -62,7 +78,7 @@ def tabu(pesos, valores, capacidad, iteraciones=100, tabu_size=5):
     memoria_actual, memoria_pico = tracemalloc.get_traced_memory()
     tracemalloc.stop()
     
-    return fitness(mejor_solucion), round((tiempo_final - tiempo_inicio) * 1000, 2), round(memoria_pico / 1024, 2)  # ms y KB
+    return fitness(mejor_solucion), round((tiempo_final - tiempo_inicio) * 1000, 2), round(memoria_pico / 1024, 2)
 
 # ejecucciones de los algoritmos
 resultado_greedy, tiempo_greedy, memoria_greedy = greedy(pesos, valores, capacidad)
@@ -127,44 +143,5 @@ for rect in grafico_memoria:
 fig.suptitle('Comparacion de Algoritmos: Tiempo y Memoria', fontsize=14)
 plt.tight_layout()
 plt.show()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# codigo para el caso del problema favorable para tabu search
-
-
-'''
-Enunciado:
-Dado un conjunto de objetos, encuentra el subconjunto que maximice el valor total. 
-Los pesos y valores tienen una distribución menos regular.
-
-Datos del problema:
-Pesos: [3, 4, 5, 9, 12, 1]
-Valores: [8, 9, 10, 20, 30, 1]
-Capacidad Máxima: 15
-
-En este caso, Tabu Search tiene ventaja porque puede explorar combinaciones más complejas 
-y evitar soluciones iniciales subóptimas.
-'''
-
-
-
-
-
-
-
-
 
 
